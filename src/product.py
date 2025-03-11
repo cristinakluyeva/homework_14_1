@@ -6,7 +6,7 @@ class Product:
     quantity: int
 
     def __init__(self, name, description, price, quantity):
-        self.name = name
-        self.description = description
-        self.price = price
-        self.quantity = quantity
+        self.name = name # Название товара/продукта
+        self.description = description # Описание товара
+        self.price = price # Стоимость товара
+        self.quantity = quantity # Доступное количество товара(в наличие/ на складе)
