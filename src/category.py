@@ -1,5 +1,6 @@
 from src.product import Product
 
+
 class Category:
     """Класс представляет категории товаров"""
     name: str
@@ -9,11 +10,11 @@ class Category:
     products_count = 0
 
     def __init__(self, name, description, products):
-        self.name = name # Название категории
-        self.description = description # Описание категории
-        self.__products = products # список товаров, входящих в данную категорию
-        Category.category_count += 1 # количество категорий
-        Category.products_count += len(self.__products) # количество товаров по данной категории
+        self.name = name  # Название категории
+        self.description = description  # Описание категории
+        self.__products = products  # список товаров, входящих в данную категорию
+        Category.category_count += 1  # количество категорий
+        Category.products_count += len(self.__products)  # количество товаров по данной категории
 
     @property
     def products(self):
@@ -32,7 +33,6 @@ class Category:
         return self.__products
 
 
-
 if __name__ == '__main__':
     cat_1 = Category('Овощи', 'Растительные продукты', [Product('помидоры', 'красный, содержит много витамина С', 250.0, 13),
     Product('огурцы', 'диетический продукт, содержит много воды', 149.99, 20),
@@ -40,7 +40,7 @@ if __name__ == '__main__':
     Product('морковь', 'содержит много клетчатки и витамин К', 45.0, 37)])
     print(cat_1.name, cat_1.description, Category.category_count)
     print(cat_1.products)
-    #new_product = Product('свекла', 'Восстанавливает кровеснабжение', 50.0, 40)
+    # new_product = Product('свекла', 'Восстанавливает кровеснабжение', 50.0, 40)
     cat_1.products = Product('свекла', 'Восстанавливает кровеснабжение', 50.0, 40)
     print(cat_1.products)
     print(Category.products_count, cat_1.products_in_list)
