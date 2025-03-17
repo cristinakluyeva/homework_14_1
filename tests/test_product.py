@@ -7,6 +7,7 @@ def test_product_init(get_product):
     assert get_product.price == 350.0
     assert get_product.quantity == 13
 
+
 def test_new_product():
     test_product = {'name': 'pen',
                      'description': 'writing material',
@@ -21,8 +22,10 @@ def test_new_product():
     Product.new_product = test_product_dublicate
     assert Product.new_product == {'name': 'pen', 'description': 'writing material', 'price': 250.0, 'quantity': 45}
 
+
 def test_price_property(get_product):
     assert get_product.price == 350.0
+
 
 def test_price_setter(capsys, get_product):
     get_product.price = 400.5
@@ -35,4 +38,3 @@ def test_price_setter(capsys, get_product):
     get_product.price = 340.5
     message_1 = capsys.readouterr()
     assert message_1.out.strip() == "Если вы хотите понизить стоимость товара введите: yes"
-
