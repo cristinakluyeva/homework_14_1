@@ -24,12 +24,12 @@ class Product:
                 if products_dict['price'] < add_product['price']:
                     products_dict['price'] = add_product['price']
                     return products_dict
-                else:
-                    name = add_product['name']
-                    description = add_product['description']
-                    price = add_product['price']
-                    quantity = add_product['quantity']
-                    return cls(name, description, price, quantity)
+            else:
+                name = add_product['name']
+                description = add_product['description']
+                price = add_product['price']
+                quantity = add_product['quantity']
+                return cls(name, description, price, quantity)
 
     @property
     def price(self):
@@ -48,3 +48,19 @@ class Product:
         elif new_price > self.price:
             self.__price = new_price
         return self.__price
+
+
+
+test_product = {'name': 'pen',
+                'description': 'writing material',
+                'price': 25.0,
+                'quantity': 20}
+Product.new_product = test_product
+print(Product.new_product)
+test_product_dublicate = {'name': 'pen',
+                          'description': 'writing material',
+                          'price': 250.0,
+                          'quantity': 45}
+Product.new_product = test_product_dublicate
+print(Product.new_product)
+print(Product.product_class_list)
