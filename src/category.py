@@ -23,8 +23,7 @@ class Category:
             products_str += f'{prod.name}, Цена: {prod.price}, Остаток: {prod.quantity}\n'
         return products_str
 
-    @products.setter
-    def products(self, new_product: Product):
+    def add_product(self, new_product: Product):
         self.__products.append(new_product)
         Category.products_count += 1
 

@@ -1,4 +1,5 @@
 from src.product import Product
+from mock import patch
 
 
 def test_product_init(get_product):
@@ -27,7 +28,8 @@ def test_price_property(get_product):
     assert get_product.price == 350.0
 
 
-def test_price_setter(capsys, get_product):
+@patch("builtins.input")
+def test_price_setter(mock_input, capsys, get_product):
     get_product.price = 400.5
     assert get_product.price == 400.5
 
@@ -35,6 +37,6 @@ def test_price_setter(capsys, get_product):
     message = capsys.readouterr()
     assert message.out.strip() == "Цена не должна быть нулевая или отрицательная"
 
+    mock_input.return_value = "y"
     get_product.price = 340.5
-    message_1 = capsys.readouterr()
-    assert message_1.out.strip() == "Если вы хотите понизить стоимость товара введите: yes"
+    assert get_product.price == 340.5

@@ -11,7 +11,7 @@ def test_products_property(get_category):
                                      'Album, Цена: 113.0, Остаток: 23\n')
 
 
-def test_products_setter(get_category, get_product):
+def test_add_product(get_category, get_product):
     assert len(get_category.products_in_list) == 3
-    get_category.products = get_product
+    get_category.add_product(get_product)
     assert len(get_category.products_in_list) == 4
