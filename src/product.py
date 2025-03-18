@@ -24,7 +24,7 @@ class Product:
                 products_dict['quantity'] += add_product['quantity']
                 if products_dict['price'] < add_product['price']:
                     products_dict['price'] = add_product['price']
-                    return products_dict
+                return cls(**products_dict)
             else:
                 name = add_product['name']
                 description = add_product['description']
@@ -48,4 +48,3 @@ class Product:
                 self.__price = new_price
         elif new_price > self.price:
             self.__price = new_price
-        return self.__price
