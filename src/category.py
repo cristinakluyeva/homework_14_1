@@ -16,6 +16,13 @@ class Category:
         Category.category_count += 1  # количество категорий
         Category.products_count += len(self.__products)  # количество товаров по данной категории
 
+    def __str__(self):
+        sum_products = 0 # Устанавливаем общее кол-во продуктов равным нулю
+        for prod in self.__products: # Проходим все товары категории и складываем их
+            sum_products += prod.quantity
+
+        return f'{self.name}, количество продуктов: {sum_products} шт.'
+
     @property
     def products(self):
         products_str = ''
