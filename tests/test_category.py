@@ -15,3 +15,7 @@ def test_add_product(get_category, get_product):
     assert len(get_category.products_in_list) == 3
     get_category.add_product(get_product)
     assert len(get_category.products_in_list) == 4
+
+
+def test_category_str(get_category):
+   assert str(get_category) == 'Paper for office and artist, количество продуктов: 149 шт.'

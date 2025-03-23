@@ -16,6 +16,17 @@ def get_product():
 
 
 @pytest.fixture
+def get_product1():
+    return Product(
+        name='Album',
+        description='This book intended to be used for drawing with colors and acrylic. Format: square 15x35',
+        price=230.0,
+        quantity=48
+
+    )
+
+
+@pytest.fixture
 def get_category():
     return Category(
         name='Paper for office and artist',
