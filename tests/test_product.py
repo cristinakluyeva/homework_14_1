@@ -45,5 +45,6 @@ def test_price_setter(mock_input, capsys, get_product):
 def test_products_str(get_product):
     assert str(get_product) == 'Sketchbook, 350.0 руб. Остаток: 13 шт.'
 
+
 def test_product_add(get_product, get_product1):
     assert (get_product.price * get_product.quantity) + (get_product1.price * get_product1.quantity) == 15590.0

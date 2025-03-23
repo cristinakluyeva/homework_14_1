@@ -17,8 +17,8 @@ class Category:
         Category.products_count += len(self.__products)  # количество товаров по данной категории
 
     def __str__(self):
-        sum_products = 0
-        for prod in self.__products:
+        sum_products = 0 # Устанавливаем общее кол-во продуктов равным нулю
+        for prod in self.__products: # Проходим все товары категории и складываем их
             sum_products += prod.quantity
 
         return f'{self.name}, количество продуктов: {sum_products} шт.'
@@ -37,13 +37,3 @@ class Category:
     @property
     def products_in_list(self):
         return self.__products
-
-
-if __name__ == '__main__':
-    category_1 = Category("Фрукты", "Сладкие плоды", [Product("Апельсины", "Цитрусовые", 150, 20),
-                                                      Product("Лимон", "Цитрусовые", 129, 13),
-                                                      Product("Гранат", "Семенное", 269, 190),
-                                                      Product("Груша", "Детское питание", 189, 55)
-                                                      ])
-
-    print(category_1)
