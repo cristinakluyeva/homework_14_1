@@ -6,12 +6,12 @@ class Product:
     quantity: int
     product_class_list = []
 
-    def __init__(self, name, description, price, quantity):
+    def __init__(self, name, description, price, quantity, color=None):
         self.name = name  # Название товара/продукта
         self.description = description  # Описание товара
         self.__price = price  # Стоимость товара
-        self.quantity = quantity  # Доступное количество товара(в наличие/ на складе)
-
+        self.quantity = quantity # Доступное количество товара(в наличие/ на складе)
+        self.color = color
         Product.product_class_list.append({'name': self.name,
                                            'description': self.description,
                                            'price': self.__price,
