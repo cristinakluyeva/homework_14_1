@@ -3,6 +3,8 @@ import pytest
 from src.category_iterator import CategoryIterator
 from src.product import Product
 from src.category import Category
+from src.smartphone import Smartphone
+from src.lawngrass import LawnGrass
 
 
 @pytest.fixture
@@ -41,3 +43,24 @@ def get_category():
 @pytest.fixture
 def category_iterator(get_category):
     return CategoryIterator(get_category)
+
+
+@pytest.fixture
+def smartphone_1():
+    return Smartphone('Nokia G400 5G', 'Android system', 25000, 19, 'Snapgragon 480 Plus, 4', 'Nokia', '64Gb')
+
+
+@pytest.fixture
+def smartphone_2():
+    return Smartphone('Sony Xperia', 'The device include: Music Pro, Video Pro, Cinema Pro and PlayStationApp...',
+                      50000, 5, 'Qualcomm Snapgragon 8 Gen in 1, 8', 'Sony', '256Gb')
+
+
+@pytest.fixture
+def lawngrass_1():
+    return LawnGrass('Green field', 'Short and soft cover', 1200, 10, 'Russia', '30 days', 'green')
+
+
+@pytest.fixture
+def lawngrass_2():
+    return LawnGrass('Football grass', 'Ideal for sport area', 3500, 100, 'USA', '40 days', 'light green')

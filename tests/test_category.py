@@ -33,3 +33,16 @@ def test_Category_Iterator(category_iterator):
 
     with pytest.raises(StopIteration):
         next(category_iterator)
+
+
+def test_category_add_product_error(get_category):
+    with pytest.raises(TypeError):
+        class Test:
+            pass
+        test = Test()
+        get_category.add_product(test)
+
+
+def test_category_add_product_periodic_task(get_category, smartphone_1):
+    get_category.add_product(smartphone_1)
+    assert get_category.products_in_list[-1].name == 'Nokia G400 5G'
