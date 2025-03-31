@@ -19,4 +19,3 @@ def test_smartphone_add(smartphone_1, smartphone_2):
 def test_smartphone_add_error(smartphone_1, lawngrass_1):
     with pytest.raises(TypeError):
         smartphone_1 + lawngrass_1
-

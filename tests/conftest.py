@@ -52,7 +52,8 @@ def smartphone_1():
 
 @pytest.fixture
 def smartphone_2():
-    return Smartphone('Sony Xperia', 'The device include: Music Pro, Video Pro, Cinema Pro and PlayStationApp...', 50000, 5, 'Qualcomm Snapgragon 8 Gen in 1, 8', 'Sony', '256Gb')
+    return Smartphone('Sony Xperia', 'The device include: Music Pro, Video Pro, Cinema Pro and PlayStationApp...',
+                      50000, 5, 'Qualcomm Snapgragon 8 Gen in 1, 8', 'Sony', '256Gb')
 
 
 @pytest.fixture

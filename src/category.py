@@ -17,10 +17,7 @@ class Category:
         Category.products_count += len(self.__products)  # количество товаров по данной категории
 
     def __str__(self):
-        sum_products = sum(prod.quantity for prod in self.__products) # Устанавливаем общее кол-во продуктов равным нулю
-        #for prod in self.__products: # Проходим все товары категории и складываем их
-            #sum_products += prod.quantity
-
+        sum_products = sum(prod.quantity for prod in self.__products)
         return f'{self.name}, количество продуктов: {sum_products} шт.'
 
     @property
@@ -34,7 +31,8 @@ class Category:
         if isinstance(new_product, Product):
             self.__products.append(new_product)
             Category.products_count += 1
-        
+        else:
+            raise TypeError
 
     @property
     def products_in_list(self):
