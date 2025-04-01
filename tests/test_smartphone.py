@@ -9,7 +9,7 @@ def test_smartphone_init(smartphone_1):
     assert smartphone_1.efficiency == 'Snapgragon 480 Plus, 4'
     assert smartphone_1.model == 'Nokia'
     assert smartphone_1.memory == '64Gb'
-    assert smartphone_1.color == None
+    assert smartphone_1.color is None
 
 
 def test_smartphone_add(smartphone_1, smartphone_2):
