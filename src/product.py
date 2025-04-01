@@ -12,10 +12,13 @@ class Product:
         self.__price = price  # Стоимость товара
         self.quantity = quantity  # Доступное количество товара(в наличие/ на складе)
         self.color = color
-        Product.product_class_list.append({'name': self.name,
-                                           'description': self.description,
-                                           'price': self.__price,
-                                           'quantity': self.quantity})
+        Product.product_class_list.append(
+            {'name': self.name,
+             'description': self.description,
+             'price': self.__price,
+             'quantity': self.quantity
+             }
+        )
 
     def __str__(self):
         return f'{self.name}, {self.__price} руб. Остаток: {self.quantity} шт.'

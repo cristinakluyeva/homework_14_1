@@ -10,17 +10,19 @@ class Smartphone(Product):
         self.efficiency = efficiency
         self.model = model
         self.memory = memory
-        Smartphone.product_class_list.append({'name': self.name,
-                                           'description': self.description,
-                                           'price': self.price,
-                                           'quantity': self.quantity,
-                                           'color': self.color,
-                                           'efficiency': self.efficiency,
-                                           'model': self.model,
-                                           'memory': self.memory})
+        Smartphone.product_class_list.append(
+            {'name': self.name,
+             'description': self.description,
+             'price': self.price,
+             'quantity': self.quantity,
+             'color': self.color,
+             'efficiency': self.efficiency,
+             'model': self.model,
+             'memory': self.memory}
+        )
 
     def __add__(self, other):
-        if isinstance(other, Smartphone):
+        if type(other) is Smartphone:
             return (self.price * self.quantity) + (other.price * other.quantity)
         else:
             raise TypeError
