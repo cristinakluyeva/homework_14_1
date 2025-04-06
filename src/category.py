@@ -1,7 +1,8 @@
 from src.product import Product
+from src.buying import Buying
 
 
-class Category:
+class Category(Buying):
     """Класс представляет категории товаров"""
     name: str
     description: str

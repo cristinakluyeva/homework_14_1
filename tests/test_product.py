@@ -37,7 +37,7 @@ def test_price_setter(mock_input, capsys, get_product):
 
     get_product.price = 0
     message = capsys.readouterr()
-    assert message.out.strip() == "Цена не должна быть нулевая или отрицательная"
+    assert message.out.strip() == 'Product(Sketchbook, This book intended to be used for drawing with pens and pencils. Format: square 20x20, 350.0, 13)\nЦена не должна быть нулевая или отрицательная'
 
     mock_input.return_value = "y"
     get_product.price = 340.5
