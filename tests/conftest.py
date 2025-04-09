@@ -5,6 +5,7 @@ from src.product import Product
 from src.category import Category
 from src.smartphone import Smartphone
 from src.lawngrass import LawnGrass
+from src.order import Order
 
 
 @pytest.fixture
@@ -64,3 +65,18 @@ def lawngrass_1():
 @pytest.fixture
 def lawngrass_2():
     return LawnGrass('Football grass', 'Ideal for sport area', 3500, 100, 'USA', '40 days', 'light green')
+
+
+@pytest.fixture
+def order_1():
+    return Order('Груша', 'Фрукты', 250, 23)
+
+
+@pytest.fixture
+def order_2():
+    return Product('Шоколад', 'Сладости', 139, 50)
+
+
+@pytest.fixture
+def order_3():
+    return Order('Редис', 'Овощи', 60, 100)

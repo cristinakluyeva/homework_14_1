@@ -26,3 +26,7 @@ class Smartphone(Product):
             return (self.price * self.quantity) + (other.price * other.quantity)
         else:
             raise TypeError
+
+
+if __name__ == '__main__':
+    smartphone = Smartphone("LG", "Соевый продукт", 30000, 10, "Super", "LG", "128Gb", "black")

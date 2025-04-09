@@ -1,4 +1,8 @@
-class Product:
+from src.base_product import BaseProduct
+from src.print_mixin import PrintMixin
+
+
+class Product(BaseProduct, PrintMixin):
     """Класс представляет информацию о товаре: название, описание, цена, количество"""
     name: str
     description: str
@@ -19,6 +23,7 @@ class Product:
              'quantity': self.quantity
              }
         )
+        super().__init__()
 
     def __str__(self):
         return f'{self.name}, {self.__price} руб. Остаток: {self.quantity} шт.'
@@ -57,3 +62,10 @@ class Product:
                 self.__price = new_price
         elif new_price > self.price:
             self.__price = new_price
+
+
+
+if __name__ == '__main__':
+    product = Product("Спаржа", "Соевый продукт", 256, 10, "бежевый")
+    new_product_dict = {'name': 'Фунчоза', 'description': "Лапша из бобовых культур", 'price': 129, 'quantity': 23, 'color': 'белый'}
+    print(Product.new_product(new_product_dict))
