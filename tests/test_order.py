@@ -13,7 +13,7 @@ def test_order_add_product(order_2):
     assert Order.ordered_product_list[-1].name == 'Шоколад'
 
 
-def test_order_product_in_list(capsys, order_1):
+def test_order_products_in_list(capsys, order_1):
     print(Order.products_in_list())
     message = capsys.readouterr()
     assert message.out.strip() == ('Order(Груша, Фрукты, 250, 23)\n'
