@@ -1,3 +1,5 @@
+import pytest
+
 from src.product import Product
 from mock import patch
 
@@ -50,3 +52,8 @@ def test_products_str(get_product):
 
 def test_product_add(get_product, get_product1):
     assert (get_product.price * get_product.quantity) + (get_product1.price * get_product1.quantity) == 15590.0
+
+
+def test_product_without_quantity():
+    with pytest.raises(ValueError):
+        Product('Палочки со вкусом курицы', 'Лакомство для питомцев', 120, 0)

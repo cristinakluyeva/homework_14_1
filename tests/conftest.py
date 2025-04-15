@@ -80,3 +80,8 @@ def order_2():
 @pytest.fixture
 def order_3():
     return Order('Редис', 'Овощи', 60, 100)
+
+
+@pytest.fixture
+def category_without_products():
+    return Category('Cars', 'Transport objects', [])

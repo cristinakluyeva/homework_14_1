@@ -14,7 +14,10 @@ class Product(BaseProduct, PrintMixin):
         self.name = name  # Название товара/продукта
         self.description = description  # Описание товара
         self.__price = price  # Стоимость товара
-        self.quantity = quantity  # Доступное количество товара(в наличие/ на складе)
+        if quantity > 0:
+            self.quantity = quantity  # Доступное количество товара(в наличие/ на складе)
+        else:
+            raise ValueError('Товар с нулевым количеством не может быть добавлен')
         self.color = color
         Product.product_class_list.append(
             {'name': self.name,
@@ -62,10 +65,3 @@ class Product(BaseProduct, PrintMixin):
                 self.__price = new_price
         elif new_price > self.price:
             self.__price = new_price
-
-
-
-if __name__ == '__main__':
-    product = Product("Спаржа", "Соевый продукт", 256, 10, "бежевый")
-    new_product_dict = {'name': 'Фунчоза', 'description': "Лапша из бобовых культур", 'price': 129, 'quantity': 23, 'color': 'белый'}
-    print(Product.new_product(new_product_dict))
