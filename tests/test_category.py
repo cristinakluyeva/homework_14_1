@@ -68,6 +68,3 @@ def test_average_cost_exception(capsys, get_category):
 def test_category_error(get_category):
     with pytest.raises(ValueError):
         get_category.add_product(Product('Томаты', 'Овощи', 250, 0))
-
-
-

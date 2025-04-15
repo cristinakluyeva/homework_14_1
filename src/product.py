@@ -65,12 +65,3 @@ class Product(BaseProduct, PrintMixin):
                 self.__price = new_price
         elif new_price > self.price:
             self.__price = new_price
-
-
-
-if __name__ == '__main__':
-    product = Product("Спаржа", "Соевый продукт", 256, 10, "бежевый")
-    new_product_dict = {'name': 'Фунчоза', 'description': "Лапша из бобовых культур", 'price': 129, 'quantity': 23, 'color': 'белый'}
-    print(Product.new_product(new_product_dict))
-
-    product_1 = Product("Спаржа", "Соевый продукт", 256, 0, "бежевый")
