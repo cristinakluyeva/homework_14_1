@@ -38,3 +38,18 @@ class Category(Buying):
     @property
     def products_in_list(self):
         return self.__products
+
+    def average_cost(self):
+        average_cost = 0  # Создаем переменную средней стоимости товаров
+        try:  #  Попытка вычисления средней стоимости товаров:
+            average_cost = sum([prod.price for prod in self.__products]) / len(self.__products)
+            return average_cost
+        except ZeroDivisionError:  #  При возникновении исключения, возвращаем первоначальное значение переменной:
+            return average_cost
+
+
+if __name__ == '__main__':
+    category = Category('Маркеры', "Материалы для рисования",
+                        [Product('Sketchmarkers', 'Markers for drawing', 180, 1, 'any'),
+                        Product('TOUCH', 'Markers for drawing', 196, 1, 'any')])
+    print(category.average_cost())
