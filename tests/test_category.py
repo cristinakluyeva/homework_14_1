@@ -1,7 +1,6 @@
 import pytest
 
 from src.product import Product
-from src.exceptions import ZeroProductQuantity
 
 
 def test_category_init(get_category):
