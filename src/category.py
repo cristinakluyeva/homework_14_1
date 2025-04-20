@@ -34,7 +34,7 @@ class Category(Buying):
             try:
                 if new_product.quantity == 0:
                     raise ZeroProductQuantity('Товар с нулевым количеством не может быть добавлен')
-            except ZeroProductQuantity as e:
+            except ZeroProductQuantity:
                 print('Проверьте количество товаров в категории. Возможно вы забыли их добавить.')
             else:
                 self.__products.append(new_product)
@@ -51,8 +51,8 @@ class Category(Buying):
 
     def average_cost(self):
         average_cost = 0  # Создаем переменную средней стоимости товаров
-        try:  #  Попытка вычисления средней стоимости товаров:
+        try:  # Попытка вычисления средней стоимости товаров:
             average_cost = sum([prod.price for prod in self.__products]) / len(self.__products)
             return average_cost
-        except ZeroDivisionError:  #  При возникновении исключения, возвращаем первоначальное значение переменной:
+        except ZeroDivisionError:  # При возникновении исключения, возвращаем первоначальное значение переменной:
             return average_cost
